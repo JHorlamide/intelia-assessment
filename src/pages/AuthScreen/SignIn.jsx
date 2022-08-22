@@ -1,5 +1,5 @@
 import { useState } from "react";
-import sideImage from "../../assets/files.jpeg";
+import sideImage from "../../assets/files-min.jpeg";
 import CustomBtn from "../../components/CustomBtn";
 import CustomInput from "../../components/CustomInput";
 
