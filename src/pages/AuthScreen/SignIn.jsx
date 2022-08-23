@@ -2,6 +2,7 @@ import { useState } from "react";
 import sideImage from "../../assets/files-min.jpeg";
 import CustomBtn from "../../components/CustomBtn";
 import CustomInput from "../../components/CustomInput";
+import coverImage from "../../assets/work.jpeg";
 
 const SignIn = () => {
   const [formData, setFormData] = useState({
@@ -23,7 +24,7 @@ const SignIn = () => {
 
   return (
     <div className='flex'>
-      <div className='w-1/2'>
+      <div className='w-1/2 sm:hidden md:block'>
         {/* IMAGE CONTAINER */}
         <div className='h-screen'>
           <img src={sideImage} className='h-full w-full' alt='' />
@@ -45,9 +46,12 @@ const SignIn = () => {
         </div>
       </div>
 
-      <div className='w-5/6'>
+      <div
+        className='w-5/6  sm:w-full sm:h-screen sm:bg-no-repeat sm:bg-cover sm:bg-left sm:bg-fixed md:bg-white md:h-full'
+        style={{ backgroundImage: `url(${coverImage})` }}
+      >
         {/* AUTH CONTAINER */}
-        <div className='pt-20 px-28'>
+        <div className='pt-16 px-40 hidden sm:block sm:bg-white sm:shadow-md sm:pb-10 sm:my-20 sm:mx-12 sm:px-20 sm:rounded-lg md:bg-inherit md:px-28 md:my-0 md:mx-0 md:shadow-none md:rounded-none'>
           <div className='flex justify-between'>
             <div className='flex'>
               <i className='fa-solid fa-arrow-left mr-5 mt-1'></i>
@@ -56,12 +60,18 @@ const SignIn = () => {
 
             <div className='flex'>
               <p className='font-medium mr-5'>Don't have an account</p>
-              <CustomBtn btnMargin={"-mt-3"}>Sign Up</CustomBtn>
+              <CustomBtn
+                btnStyle={
+                  "bg-primaryColor text-white -mt-3 py-3 px-7 font-semibold rounded-lg"
+                }
+              >
+                Sign Up
+              </CustomBtn>
             </div>
           </div>
 
           <div className='flex flex-col w-4/6'>
-            <div className='mt-40'>
+            <div className='md:mt-40 sm:mt-10'>
               <h1 className='text-3xl font-semibold mb-2'>Sign In Into Zupa</h1>
               <p className='text-xl text-gray-500 font-medium'>
                 Enter your details
@@ -70,8 +80,11 @@ const SignIn = () => {
 
             {/* INPUT ELEMENT */}
             <form onSubmit={handleSubmit}>
-              <div className="className='flex flex-col space-y-8 mt-10">
+              <div className='flex flex-col space-y-8 mt-10'>
                 <CustomInput
+                  inputStyle={
+                    "px-10 py-4 rounded-lg bg-gray-100 font-medium text-dark w-full"
+                  }
                   inputProps={{
                     type: "email",
                     name: "email",
@@ -82,6 +95,9 @@ const SignIn = () => {
                 />
 
                 <CustomInput
+                  inputStyle={
+                    "px-10 py-4 rounded-lg bg-gray-100 font-medium text-dark w-full"
+                  }
                   inputProps={{
                     type: "password",
                     name: "password",
@@ -98,7 +114,12 @@ const SignIn = () => {
                 </p>
               </div>
 
-              <CustomBtn type='submit' btnMargin={"mt-5"}>
+              <CustomBtn
+                type='submit'
+                btnStyle={
+                  "bg-primaryColor text-white mt-5 py-3 px-7 font-semibold rounded-lg"
+                }
+              >
                 Sign In
               </CustomBtn>
             </form>
