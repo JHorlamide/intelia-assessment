@@ -25,12 +25,6 @@ const SignIn = () => {
     console.log(formData);
   };
 
-  useEffect(() => {
-    setTimeout(() => {
-      navigation("/page2");
-    }, 5000);
-  });
-
   return (
     <div className='flex'>
       <div className='w-1/2 sm:hidden md:block'>
