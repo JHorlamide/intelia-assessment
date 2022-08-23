@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import sideImage from "../../assets/files-min.jpeg";
 import CustomBtn from "../../components/CustomBtn";
 import CustomInput from "../../components/CustomInput";
 import coverImage from "../../assets/work.jpeg";
+import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
+  const navigation = useNavigate();
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -21,6 +24,12 @@ const SignIn = () => {
     e.preventDefault();
     console.log(formData);
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      navigation("/page2");
+    }, 5000);
+  });
 
   return (
     <div className='flex'>
