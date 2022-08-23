@@ -12,6 +12,7 @@ import { RiCloseLine } from "react-icons/ri";
 import CustomBtn from "../../components/CustomBtn";
 import { graphConfig, orderData } from "../../data";
 import OrderItems from "./order-items/OrderItems";
+import { HiArrowCircleLeft, HiArrowCircleRight } from "react-icons/hi";
 
 const LandingPage1 = () => {
   useEffect(() => {
@@ -158,7 +159,7 @@ const LandingPage1 = () => {
             </div>
 
             {/* Your Monthly Sales */}
-            <div id='overview' className='py-10'>
+            <div id='overview' className='py-5'>
               <div className='flex items-center justify-between py-5 pl-5'>
                 <h3 className='text-lg font-bold text-gray-500 '>
                   Your Monthly Sales
@@ -181,7 +182,7 @@ const LandingPage1 = () => {
             </div>
 
             {/* Latest Orders */}
-            <div id='overview' className='py-10'>
+            <div id='overview' className='py-5'>
               <div className='flex items-center justify-between py-5'>
                 <h3 className='text-lg font-bold text-gray-500 '>
                   Latest Order
@@ -280,6 +281,17 @@ const LandingPage1 = () => {
                       ))}
                     </tbody>
                   </table>
+
+                  <div className='flex justify-end space-x-2 pt-4 px-10'>
+                    <div>
+                      <p className=''>1-8 out 199</p>
+                    </div>
+
+                    <div className='flex space-x-1'>
+                      <HiArrowCircleLeft className="w-6 h-6"/>
+                      <HiArrowCircleRight className="w-6 h-6"/>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

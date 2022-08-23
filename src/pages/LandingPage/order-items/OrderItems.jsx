@@ -39,7 +39,7 @@ const OrderItems = ({ order }) => {
       <td className='py-4 px-0 font-semibold'>{order.amount}</td>
 
       <td className='py-4 px-0'>
-        <div className='flex items-center'>
+        <div className='flex items-center space-x-2'>
           <p
             className={`${orderStatusColor(order.status)} text-md font-bold -mt-2`}
           >
