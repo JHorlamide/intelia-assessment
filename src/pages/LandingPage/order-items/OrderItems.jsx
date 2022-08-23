@@ -9,11 +9,11 @@ const OrderItems = ({ order }) => {
   const orderStatusColor = (orderStatus) => {
     switch (orderStatus) {
       case "Dispatched":
-        return "green-500";
+        return "text-green-500";
       case "Pending":
-        return "yellow-700";
+        return "text-yellow-700";
       case "Processing":
-        return "blue-800";
+        return "text-blue-800";
       default:
         break;
     }
@@ -41,9 +41,7 @@ const OrderItems = ({ order }) => {
       <td className='py-4 px-0'>
         <div className='flex items-center'>
           <p
-            className={`text-md text-${orderStatusColor(
-              order.status
-            )} font-bold -mt-2`}
+            className={`${orderStatusColor(order.status)} text-md font-bold -mt-2`}
           >
             {order.status}
           </p>
